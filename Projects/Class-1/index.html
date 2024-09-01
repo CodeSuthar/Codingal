@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes in Javascript</title>
+</head>
+<body>
+    <h1 id="student"></h1>
+    <script>
+        class student {
+            constructor(name, age) {
+               this.name = name;
+               this.age =  age;
+            }
+
+            greet() {
+                const currentYear = new Date().getFullYear();
+                const bornYear = currentYear - this.age;
+
+                return `Hi, My name is ${this.name} and i was born in ${bornYear}`
+            }
+        }
+
+        const h1 = document.querySelector("#student")
+
+        h1.innerHTML = new student("Krisha", 15).greet()
+    </script>
+</body>
+</html>

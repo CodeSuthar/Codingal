@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page for Projects</title>
+</head>
+
+<body>
+    <h1>Projects List</h1>
+    <hr>
+    <div class="hereAnchor"></div>
+    <script>
+        const list = [
+            {
+                href: "./Projects/Class-1/index.html",
+                name: "Classes in JavaScript"
+            },
+        ];
+
+        const hereAnchor = document.querySelector('.hereAnchor');
+
+        for (let i = 0; i < list.length; i++) {
+            const project = list[i];
+
+            const link = document.createElement('a');
+            link.href = project.href;
+            link.textContent = project.name;
+
+            const itemNumber = document.createTextNode(`${i + 1}. `);
+            hereAnchor.appendChild(itemNumber);
+            hereAnchor.appendChild(link);
+            const lineBreak = document.createElement('br');
+            hereAnchor.appendChild(lineBreak);
+        }
+    </script>
+</body>
+
+</html>
