@@ -29,14 +29,11 @@
             }
 
             greet() {
-                // Call the greet method from the parent class and add more info
                 return `${super.greet()}. I like ${this.subject}.`;
             }
         }
 
         const h1 = document.querySelector("#student");
-
-        // Create a Teacher instance and display its greeting
         h1.innerHTML = new Teacher("Krisha", 15, "Mathematics").greet();
     </script>
 </body>
