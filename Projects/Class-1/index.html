@@ -8,7 +8,7 @@
 <body>
     <h1 id="student"></h1>
     <script>
-        class student {
+        class Student {
             constructor(name, age) {
                this.name = name;
                this.age =  age;
@@ -18,13 +18,26 @@
                 const currentYear = new Date().getFullYear();
                 const bornYear = currentYear - this.age;
 
-                return `Hi, My name is ${this.name} and i was born in ${bornYear}`
+                return `Hi, My name is ${this.name} and I was born in ${bornYear}`;
             }
         }
 
-        const h1 = document.querySelector("#student")
+        class Teacher extends Student {
+            constructor(name, age, subject) {
+                super(name, age); // Call the parent class constructor
+                this.subject = subject;
+            }
 
-        h1.innerHTML = new student("Krisha", 15).greet()
+            greet() {
+                // Call the greet method from the parent class and add more info
+                return `${super.greet()}. I like ${this.subject}.`;
+            }
+        }
+
+        const h1 = document.querySelector("#student");
+
+        // Create a Teacher instance and display its greeting
+        h1.innerHTML = new Teacher("Krisha", 15, "Mathematics").greet();
     </script>
 </body>
 </html>
