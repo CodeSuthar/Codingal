@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array sorting and mapping in JavaScript</title>
+    <style>
+        .result-col {
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array sorting and mapping in JavaScript</h1>
+    <hr>
+    <p class="result-col">Result: <span id="resultt"></span></p>
+    <script>
+        let oddNumber = [43, 103, 1, 5, 25, 29]
+
+        const newArray = oddNumber.map(x => x*10)
+
+        document.querySelector('#resultt').innerHTML = newArray
+    </script>
+</body>
+</html>
