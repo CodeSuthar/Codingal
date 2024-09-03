@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array sorting and mapping in JavaScript</title>
+    <style>
+        .result-col {
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array sorting and mapping in JavaScript</h1>
+    <hr>
+    <p class="result-col">Result: <span id="pointshere"></span></p>
+    <button onclick="ascending()">
+        Ascending
+    </button>
+    <button onclick="descending()">
+        Descending
+    </button>
+    <script>
+        let points = [40, 100, 1, 5, 25, 10]
+
+        let pointshere = document.querySelector("#pointshere")
+
+        pointshere.innerHTML = points;
+
+        function ascending() {
+            points.sort(function(a, b){return a - b});
+
+            pointshere.innerHTML = points;
+        }
+
+        function descending() {
+            points.sort(function(a, b){return b - a});
+
+            pointshere.innerHTML = points;
+        }
+    </script>
+</body>
+</html>
