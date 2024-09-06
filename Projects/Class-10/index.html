@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal Function vs Arrow Function</title>
+    <script>
+        function greet(name) {
+            return "Hello, " + name + "!";
+        }
+
+        const greetArrow = (name) => "Hello, " + name + "!";
+
+        function showResults() {
+            // Normal function result
+            let normalResult = greet("Prahlad");
+            document.getElementById("normalOutput").innerText = normalResult;
+
+            // Arrow function result
+            let arrowResult = greetArrow("Vyom");
+            document.getElementById("arrowOutput").innerText = arrowResult;
+        }
+    </script>
+</head>
+<body onload="showResults()">
+
+    <h1>Normal Function vs Arrow Function</h1>
+
+    <h2>Normal Function</h2>
+    <p>Result:</p>
+    <p id="normalOutput"></p>
+
+    <h2>Arrow Function</h2>
+    <p>Result:</p>
+    <p id="arrowOutput"></p>
+
+</body>
+</html>
