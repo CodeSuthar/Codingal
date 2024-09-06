@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try and Catch error</title>
+</head>
+<body>
+    <h1>Error Handling</h1>
+    <hr>
+    <button onclick="but1()" id="but1">alert()</button>
+    <button onclick="but2()" id="but2">addAlert()</button>
+    <script>
+        function but1() {
+            try {
+                alert("The alert() Function Works As It Is Defined In JS")
+            } catch (e) {
+                console.log(e) 
+                alert(e.message)
+            }
+        }
+
+        function but2() {
+            try {
+                addAlert("The addAlert() Functiomg Does Not Work As It Isn't Defined In JS")
+            } catch (e) {
+                console.log(e) 
+                alert(e.message)
+            }
+        }
+    </script>
+</body>
+</html>
