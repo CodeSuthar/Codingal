@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to JavaScript</title>
+</head>
+<body>
+    <h1>Introduction to JavaScript</h1>
+    <hr>
+    <p class="result"></p>
+    <script>
+        let text = ""
+        for (i = 0; i < 10; i++) {
+            text += `The value of variable "<b>i</b>": ${i}<br>`
+        }
+
+        document.querySelector(".result").innerHTML = text;
+    </script>
+</body>
+</html>

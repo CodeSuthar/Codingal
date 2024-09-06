@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Classes in JavaScript</title>
+</head>
+<body>
+    <h1 id="student"></h1>
+    <h2 id="birth-year"></h2>
+    <h3 id="school-info"></h3>
+    <script>
+        class Student {
+            constructor(name, age, grade) {
+                this.name = name;
+                this.age = age;
+                this.grade = grade;
+            }
+
+            greet() {
+                const bornYear = Student.calculateBirthYear(this.age);
+                return `Hi, my name is ${this.name}, I am in grade ${this.grade}, and I was born in ${bornYear}.`;
+            }
+
+            static calculateBirthYear(age) {
+                const currentYear = new Date().getFullYear();
+                return currentYear - age;
+            }
+        }
+
+        class Teacher {
+            constructor(name, age, subject, school) {
+                this.name = name
+                this.subject = subject;
+                this.school = school;
+            }
+
+            greet() {
+                return `Hello, My name is ${this.name} I teach ${this.subject} at ${this.school}.`;
+            }
+        }
+
+        class School {
+            constructor(name, students = [], teachers = []) {
+                this.name = name;
+                this.students = students;
+                this.teachers = teachers;
+            }
+
+            addStudent(student) {
+                this.students.push(student);
+            }
+
+            addTeacher(teacher) {
+                this.teachers.push(teacher);
+            }
+
+            getSchoolInfo() {
+                return `School: ${this.name}, Students: ${this.students.length}, Teachers: ${this.teachers.length}`;
+            }
+        }
+
+        const school = new School("SSV 3 School");
+
+        const student1 = new Student("Prahlad", 14, 8);
+        const student2 = new Student("Param", 16, 10);
+        const student3 = new Student("Krisha", 15, 9);
+        const student4 = new Student("Vyom", 13, 7);
+
+        const teacher1 = new Teacher("Yaman", 35, "Mathematics", "SSV 3 School");
+        const teacher2 = new Teacher("Hritika", 30, "Science", "SSV 3 School");
+        const teacher3 = new Teacher("Muska", 29, "History", "SSV 3 School");
+
+        school.addStudent(student1);
+        school.addStudent(student2);
+        school.addStudent(student3);
+        school.addStudent(student4);
+        school.addTeacher(teacher1);
+        school.addTeacher(teacher2);
+        school.addTeacher(teacher3);
+
+        const h1 = document.querySelector("#student");
+        const h2 = document.querySelector("#birth-year");
+        const h3 = document.querySelector("#school-info");
+
+        h1.innerHTML = teacher2.greet();
+        h2.innerHTML = student1.greet();
+        h3.innerHTML = school.getSchoolInfo();
+    </script>
+</body>
+</html>

@@ -26,7 +26,7 @@
             }
         }
 
-        class Teacher extends Student {
+        class extenedStudent extends Student {
             constructor(name, age, subject) {
                 super(name, age);
                 this.subject = subject;
@@ -40,10 +40,10 @@
         const h1 = document.querySelector("#student");
         const h2 = document.querySelector("#birth-year");
 
-        h1.innerHTML = new Teacher("Krisha", 15, "Mathematics").greet();
+        h1.innerHTML = new extenedStudent("Krisha", 15, "Mathematics").greet();
 
         const age = 15;
-        h2.innerHTML = `If you are ${age} years old, you were born in ${Student.calculateBirthYear(age)}.`;
+        h2.innerHTML = `If you are ${age} years old, you were born in ${extenedStudent.calculateBirthYear(age)}.`;
     </script>
 </body>
 </html>

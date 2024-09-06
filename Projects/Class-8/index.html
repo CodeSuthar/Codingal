@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Conversion in JavaScript</title>
+</head>
+<body>
+    <h2>The JavaScript String()</h2>
+    <hr>
+    <h3>String Method Converts Another DataType Into String</h3>
+    <br><br>
+    <p id="numberresult"></p>
+    <p id="stringresult"></p>
+    <script>
+        var x = 10;
+        var y = 20;
+
+        document.querySelector("#numberresult").innerText = x*y;
+        document.querySelector("#stringresult").innerHTML = `${String(x)} x ${String(y)}`
+    </script>
+</body>
+</html>
