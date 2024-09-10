@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with JavaScript Promises</title>
+</head>
+
+<body>
+    <h2>Working with JavaScript Promises</h2>
+    <p id="output"></p>
+    <script>
+        function displayResult(result) {
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function calculateSum(num1, num2) {
+            let total = num1 + num2;
+            displayResult(total);
+        }
+
+        let promiseTask = new Promise(function (resolveTask, rejectTask) {
+            let condition = 0;
+
+            if (condition === 0) {
+                resolveTask("Success");
+            } else {
+                rejectTask("Failed");
+            }
+        });
+
+        promiseTask.then(
+            function (message) { calculateSum(5, 5); },
+            function (errorMessage) { calculateSum(errorMessage); }
+        );
+    </script>
+</body>
+
+</html>
