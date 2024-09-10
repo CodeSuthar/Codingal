@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling in JS</title>
+</head>
+<body>
+    <h1>Error Handling Methods in JavaScript</h1>
+    <button id="tryCatchButton">Trigger try...catch Error</button>
+    <button id="promiseCatchButton">Trigger Promise Error</button>
+    <button id="asyncAwaitButton">Trigger Async/Await Error</button>
+
+    <p id="output"></p>
+
+    <script>
+        document.getElementById('tryCatchButton').addEventListener('click', function() {
+            try {
+                let result = undefinedVariable + 1;
+            } catch (error) {
+                document.getElementById('output').innerText = 'Error caught in try...catch: ' + error.message;
+            }
+        });
+
+        document.getElementById('promiseCatchButton').addEventListener('click', function() {
+            new Promise((resolve, reject) => {
+                reject('Promise error occurred!');
+            })
+            .catch(error => {
+                document.getElementById('output').innerText = 'Error caught in Promise .catch: ' + error;
+            });
+        });
+
+        document.getElementById('asyncAwaitButton').addEventListener('click', async function() {
+            try {
+                await asyncFunctionWithError();
+            } catch (error) {
+                document.getElementById('output').innerText = 'Error caught in async/await try...catch: ' + error.message;
+            }
+        });
+
+        async function asyncFunctionWithError() {
+            throw new Error('Async/Await error occurred!');
+        }
+    </script>
+</body>
+</html>
