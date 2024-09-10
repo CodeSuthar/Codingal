@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript Callbacks</h2>
+    <p>Do a multiplication and then display the result.</p>
+    <p id="result"></p>
+    <script>
+      function displayResult(value) {
+        document.getElementById("result").innerHTML = "The result of the multiplication is: " + value;
+      }
+      function multiplyNumbers(num1, num2, callback) {
+        let product = num1 * num2;
+        callback(product);
+      }
+
+      let randomNum1 = Math.floor(Math.random() * 10);
+      let randomNum2 = Math.floor(Math.random() * 10);
+      
+      multiplyNumbers(randomNum1, randomNum2, displayResult);
+    </script>
+  </body>
+</html>
