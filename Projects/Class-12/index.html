@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON reading in JS</title>
+</head>
+<body>
+    <h1>Reading JSON Data in JavaScript</h1>
+    <hr>
+    <p class="result"></p>
+    <script>
+        let obj = { name: "Aditya Suthar", nickname: "CodeSuthar", age: 15, grade: 10 };
+        let myJSON = JSON.stringify(obj);
+        let newObj = JSON.parse(myJSON);
+        
+        document.querySelector('.result').innerText = `Name: ${newObj.name}, Nickname: ${newObj.nickname}, Age: ${newObj.age}, Grade: ${newObj.grade}`;
+    </script>  
+</body>
+</html>
