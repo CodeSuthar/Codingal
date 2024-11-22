@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Minecraftia-Regular';
+  src: url('./Minecraftia-Regular.ttf') format('truetype');
+}
+
+.chatbyme {
+  background-color: rgba(128, 128, 128, 0.434);
+  float: left;
+  font-family: "Minecraftia-Regular", cursive;
+}
+
+.chatbyyou {
+  background-color: rgba(128, 128, 128, 0.434);
+  float: right;
+  font-family: "Minecraftia-Regular", cursive;
+}
